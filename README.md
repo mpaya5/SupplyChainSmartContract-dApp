@@ -41,7 +41,7 @@ Para poder darle "vida" a nuestra `Supply Chain` App debemos de crear varias fun
   - Where a product is today
   - Find product provenance (ownership)
 
-##TODO
+## TODO
 - Terminar las funciones y documentarlas
 - Chequear que funcionan correctamente y que las ejecuta correctamente con Truffle y Ganache
 - Añadir más `capabilities` según vamos trabajando
