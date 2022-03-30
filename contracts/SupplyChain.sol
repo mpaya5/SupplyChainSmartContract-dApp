@@ -1,10 +1,9 @@
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity >=0.4.21 <0.6.0;
 
 contract supplyChain {
-    uint32 public product_id = 0;           // Product ID
-    uint32 public participant_id = 0;       // Participant ID
-    uint32 public owner_id = 0;             // Ownership ID
+    uint32 public product_id = 0;   // Product ID
+    uint32 public participant_id = 0;   // Participant ID
+    uint32 public owner_id = 0;   // Ownership ID
 
     struct product {
         string modelNumber;
@@ -65,7 +64,7 @@ contract supplyChain {
             products[productId].serialNumber = _serialNumber;
             products[productId].cost = _productCost;
             products[productId].productOwner = participants[_ownerId].participantAddress;
-            products[productId].mfgTimeStamp = uint32(block.timestamp);
+            products[productId].mfgTimeStamp = uint32(now);
 
             return productId;
         }
@@ -98,7 +97,7 @@ contract supplyChain {
             ownerships[ownership_id].productId = _prodId;
             ownerships[ownership_id].productOwner = p2.participantAddress;
             ownerships[ownership_id].ownerId = _user2Id;
-            ownerships[ownership_id].trxTimeStamp = uint32(block.timestamp);
+            ownerships[ownership_id].trxTimeStamp = uint32(now);
             products[_prodId].productOwner = p2.participantAddress;
             productTrack[_prodId].push(ownership_id);
             emit TransferOwnership(_prodId);
@@ -109,7 +108,7 @@ contract supplyChain {
             ownerships[ownership_id].productId = _prodId;
             ownerships[ownership_id].productOwner = p2.participantAddress;
             ownerships[ownership_id].ownerId = _user2Id;
-            ownerships[ownership_id].trxTimeStamp = uint32(block.timestamp);
+            ownerships[ownership_id].trxTimeStamp = uint32(now);
             products[_prodId].productOwner = p2.participantAddress;
             productTrack[_prodId].push(ownership_id);
             emit TransferOwnership(_prodId);
@@ -120,7 +119,7 @@ contract supplyChain {
             ownerships[ownership_id].productId = _prodId;
             ownerships[ownership_id].productOwner = p2.participantAddress;
             ownerships[ownership_id].ownerId = _user2Id;
-            ownerships[ownership_id].trxTimeStamp = uint32(block.timestamp);
+            ownerships[ownership_id].trxTimeStamp = uint32(now);
             products[_prodId].productOwner = p2.participantAddress;
             productTrack[_prodId].push(ownership_id);
             emit TransferOwnership(_prodId);

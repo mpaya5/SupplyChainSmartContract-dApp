@@ -1,8 +1,8 @@
 // ----------------------------------------------------------------------------
 ///Implements EIP20 token standard: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
 // ----------------------------------------------------------------------------
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+
+pragma solidity >=0.4.21 <0.6.0;
 
 import "./erc20Interface.sol";
 
@@ -12,7 +12,7 @@ contract ERC20Token is ERC20Interface {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
 
-    // uint256 override public totSupply;           // Total number of tokens
+    uint256 public totSupply;           // Total number of tokens
     string public name;                   // Descriptive name (i.e. For Dummies Sample Token)
     uint8 public decimals;                // How many decimals to use when displaying amounts
     string public symbol;                 // Short identifier for token (i.e. FDT)
@@ -32,7 +32,7 @@ contract ERC20Token is ERC20Interface {
     }
 
     // Transfer tokens from msg.sender to a specified address
-    function transfer(address _to, uint256 _value) override public returns (bool success) {
+    function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value,"Insufficient funds for transfer source.");
         balances[msg.sender] -= _value;
         balances[_to] += _value;
@@ -41,7 +41,7 @@ contract ERC20Token is ERC20Interface {
     }
 
     // Transfer tokens from one specified address to another specified address
-    function transferFrom(address _from, address _to, uint256 _value) override public returns (bool success) {
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
         require(balances[_from] >= _value && allowance >= _value,"Insufficient allowed funds for transfer source.");
         balances[_to] += _value;
@@ -54,24 +54,24 @@ contract ERC20Token is ERC20Interface {
     }
 
     // Return the current balance (in tokens) of a specified address
-    function balanceOf(address _owner) override public view returns (uint256 balance) {
+    function balanceOf(address _owner) public view returns (uint256 balance) {
         return balances[_owner];
     }
 
     // Set
-    function approve(address _spender, uint256 _value) override public returns (bool success) {
+    function approve(address _spender, uint256 _value) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value); //solhint-disable-line indent, no-unused-vars
         return true;
     }
 
     // Return the
-    function allowance(address _owner, address _spender) override public view returns (uint256 remaining) {
+    function allowance(address _owner, address _spender) public view returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }
 
     // Return the total number of tokens in circulation
-    function totalSupply() override public view returns (uint256 totSupp) {
+    function totalSupply() public view returns (uint256 totSupp) {
         return totSupply;
     }
 }
