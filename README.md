@@ -41,7 +41,33 @@ Para poder darle "vida" a nuestra `Supply Chain` App debemos de crear varias fun
   - Where a product is today
   - Find product provenance (ownership)
 
-## TODO
-- Terminar las funciones y documentarlas
-- Chequear que funcionan correctamente y que las ejecuta correctamente con Truffle y Ganache
-- Añadir más `capabilities` según vamos trabajando
+## TEST
+
+He testeado la applicación usando `truffle console` junto a Ganche los valores del archivo [dirtyTest de la carpeta test](https://github.com/yumewebs/SupplyChainSmartContract-dApp/blob/main/test/dirtyTest.txt) con resultados positivos y sin ningún tipo de error.
+
+## DEPLOY
+He modificado el archivo `truffle-config.js` y lo he configurado para hacer deploy de los contratos tanto para la Mainnet como para Ropsten usando [Infura](https://infura.io) para crear la conexión.
+
+Lo único que falta es conseguir solucionar un error a la hora de hacer deploy del contrato:
+```
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x70ee57fdbae0d63c3b986ad339b8aae8c1b8974a4fec8e038c5858370b88753f
+ *** Deployment Failed ***
+
+"Migrations" -- Transaction was not mined within 750 seconds, please make sure your transaction was properly sent. Be aware that it might still be mined! -- Reason given: Custom error (could not decode)..
+
+
+Exiting: Review successful transactions manually by checking the transaction hashes above on Etherscan.
+
+
+Error:  *** Deployment Failed ***
+
+"Migrations" -- Transaction was not mined within 750 seconds, please make sure your transaction was properly sent. Be aware that it might still be mined! -- Reason given: Custom error (could not decode)..
+```
+
+*Una vez que tenga solucionado esto, testearé en ropsten la aplicación y dejaré por aquí el `hash` de las operaciones*
