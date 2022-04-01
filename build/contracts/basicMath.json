@@ -5,10 +5,12 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "uint256",
           "name": "_numberA",
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
           "name": "_numberB",
           "type": "uint256"
         }
@@ -16,6 +18,7 @@
       "name": "add",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "",
           "type": "uint256"
         }
@@ -25,9 +28,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.5+commit.47a71e8f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"_numberA\",\"type\":\"uint256\"},{\"name\":\"_numberB\",\"type\":\"uint256\"}],\"name\":\"add\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/basicMath.sol\":\"basicMath\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/basicMath.sol\":{\"keccak256\":\"0xc871a9099108633b301d1f453136609cf5e97f1b68f83bbcfc994e532ea3a24e\",\"urls\":[\"bzzr://70598cbef481a28a40edad4a0a69fdaecd5061a010c3df41a8cc76ea4c11526c\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060af8061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063771602f714602d575b600080fd5b606060048036036040811015604157600080fd5b8101908080359060200190929190803590602001909291905050506076565b6040518082815260200191505060405180910390f35b600081830190509291505056fea165627a7a72305820acbe3588296473fca2b8069902066016b2e0dd5369e82ef4ba0691665b03883e0029",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063771602f714602d575b600080fd5b606060048036036040811015604157600080fd5b8101908080359060200190929190803590602001909291905050506076565b6040518082815260200191505060405180910390f35b600081830190509291505056fea165627a7a72305820acbe3588296473fca2b8069902066016b2e0dd5369e82ef4ba0691665b03883e0029",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberA\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_numberB\",\"type\":\"uint256\"}],\"name\":\"add\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/basicMath.sol\":\"basicMath\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/basicMath.sol\":{\"keccak256\":\"0xc871a9099108633b301d1f453136609cf5e97f1b68f83bbcfc994e532ea3a24e\",\"urls\":[\"bzz-raw://d8504056c7c08dde16b3da7e63f5dee43e9332a19ca9d103b569ff0e00f96726\",\"dweb:/ipfs/QmYdVzhp1iWyAsT1ahmFUaT77pFWKrfozaVf8bgyBHkeWY\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060b88061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063771602f714602d575b600080fd5b606060048036036040811015604157600080fd5b8101908080359060200190929190803590602001909291905050506076565b6040518082815260200191505060405180910390f35b600081830190509291505056fea265627a7a723158206584dee5d13c22c02fa59304dec294564dc166473aa9dfb942db86c58c45a08364736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063771602f714602d575b600080fd5b606060048036036040811015604157600080fd5b8101908080359060200190929190803590602001909291905050506076565b6040518082815260200191505060405180910390f35b600081830190509291505056fea265627a7a723158206584dee5d13c22c02fa59304dec294564dc166473aa9dfb942db86c58c45a08364736f6c63430005100032",
   "sourceMap": "36:210:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:210:2;;;;;;;",
   "deployedSourceMap": "36:210:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:210:2;;;;;;;;;;;;;;;;;;;120:123;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;120:123:2;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;189:7;227:8;216;:19;209:26;;120:123;;;;:::o",
   "source": "pragma solidity >=0.4.21 <0.6.0;\r\n\r\ncontract basicMath {\r\n    uint256 constant private MAX_UINT256 = 2**256 - 1;\r\n\r\n    function add(uint256 _numberA, uint256 _numberB) public pure returns(uint256) {\r\n        return _numberA + _numberB;\r\n    }\r\n}",
@@ -707,11 +710,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.5+commit.47a71e8f.Emscripten.clang"
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-30T15:54:31.489Z",
+  "updatedAt": "2022-04-01T08:00:37.077Z",
   "devdoc": {
     "methods": {}
   },

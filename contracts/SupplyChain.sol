@@ -33,7 +33,7 @@ contract supplyChain {
     mapping(uint32 => ownership) public ownerships; // ownerships by ownership ID (owner_id)
     mapping(uint32 => uint32[]) public productTrack;  // ownerships by Product ID (product_id) / Movement track for a product
 
-    event TransferOwnership(uint32 productId);
+    event TransferOwnership(uint32 indexed productId);
 
     function addParticipant(string memory _name, string memory _pass, address _pAdd, string memory _pType) public returns (uint32){
         uint32 userId = participant_id++;
