@@ -1,73 +1,66 @@
 # SupplyChainSmartContract-dApp
 
 ```
-apology = "Proyecto no terminado todavía.\n"
+apology = "Proyect not finished yet.\n"
 print(apology)
 /*
-Ve al final para ver que falta
+Scroll to the end to see what's missing. 
 */
 
 ```
+This project is focused on creating a "Supply Chain App," which essentially serves as a framework to connect producers and consumers while managing products and services throughout their journey.
 
-Proyecto de creación de un "SupplyChain App", que es basicamente un framework que conecto productores a consumidores y manejar los productos y los servicios durante el trayecto.
+## Why Use Blockchain Technology?
 
-## ¿Porqué usar la tecnología Blockchain?
+We aim to reduce the cost of intermediaries and provide transparency and visibility in the supply chain. But what are intermediaries? They are the middlemen who exist between the producer and the consumer.
 
-Porqué queremos reducir el coste de los `middlemen` y ofrecer transparencia y visibilidad. Pero, ¿qué es un middlemen? Son aquellos intermediarios que se encuentran entre el productor y el consumidor.
+## How Do We Achieve This?
 
-## ¿Cómo lo hacemos? 
+To accomplish this, we need to store four types of data:
 
-Para hacerlo vamos a necesitar almacenar datos, en general cuatro tipos:
+- **ASSETS**: An asset is a product that can be purchased by the consumer.
+- **PARTICIPANTS**: Participants are all the entities involved in the supply chain. These can include manufacturers, suppliers, vendors, and consumers.
+- **OWNERSHIP**: Assets are "moved" by participants. To associate an asset with a participant, we need to manage its ownership. An ownership structure determines which participant currently owns a product or when it was owned by a particular participant. This provides the ability to track a product over time.
+- **TOKEN**: A token allows us to define the data for how participants pay each other.
 
-- **ASSETS**: Un `asset` es el producto que podrá ser comprado por el consumidor. 
-- **PARTICIPANTS**: Los participantes serán todo aquella identidad que participen en el `Supply Chain`. Pueden ser fabricantes, proveedores, vendedores y consumidores.
-- **OWNERSHIP**: Entonces, tenemos `assets` que serán "movidos" por los participantes. Para asociar un `asset` con un participante necesitaremos controlar el `ownership` del mismo. Una estructura de `ownership` determina que participante es dueño de un producto actualmente o en qué momento fue dueño de ese producto. Esto nos proporciona la capacidad de poder hacer tracking de un producto a lo largo del tiempo.
-- **TOKEN**: Con un token podremos ser capaces de definir los datos de como los participantes se pagan entre ellos.
+We also need to define the functions of the token that we will use within our application:
 
+- **Initialize Tokens**: When we first create our supply chain, we want to initialize a pool of tokens for payments.
+- **Transfer Tokens**: This function allows us to transfer tokens between participants.
+- **Authorize Token Payments**: This enables token transfers on behalf of a participant.
 
-También, tenemos que definir las funciones del token que vamos a usar para poder darle uso y usarla dentro de nuestra aplicación.
+To bring our Supply Chain App to life, we need to implement several functions:
 
-- **Initialize Tokens**: Entonces en el momento que creamos nuestra cadena de suministro por primera vez, queremos inicalizar un grupo de tokens para los pagos.
-- **Transfer Tokens**: Función que nos permitirá transferir los tokens entre los participantes.
-- **Authorize Tokens Payment**: Para poder permitir transferencias de tokens en nombre de un participante.
+- Add and update participants.
+- Move products along the supply chain.
+  - Transfer product ownership.
+- Add and update products.
+- Track an asset.
+  - Determine where a product is today.
+  - Find product provenance (ownership history).
 
-Para poder darle "vida" a nuestra `Supply Chain` App debemos de crear varias funciones:
+## Testing
 
-- Add and update Participants.
-- Move products along the Supply Chain
-  - Transfer product ownership
-- Add and update products
-- Track an asset
-  - Where a product is today
-  - Find product provenance (ownership)
+I have tested the application using `truffle console` along with Ganache, and the results from the [dirtyTest file in the test folder](https://github.com/yumewebs/SupplyChainSmartContract-dApp/blob/main/test/dirtyTest.txt) were positive, with no errors encountered.
 
-## TEST
+## Deployment
 
-He testeado la applicación usando `truffle console` junto a Ganche los valores del archivo [dirtyTest de la carpeta test](https://github.com/yumewebs/SupplyChainSmartContract-dApp/blob/main/test/dirtyTest.txt) con resultados positivos y sin ningún tipo de error.
+I have modified the `truffle-config.js` file and configured it for deploying contracts to both the Mainnet and Ropsten using [Infura](https://infura.io) to establish the connection.
 
-## DEPLOY
-He modificado el archivo `truffle-config.js` y lo he configurado para hacer deploy de los contratos tanto para la Mainnet como para Ropsten usando [Infura](https://infura.io) para crear la conexión.
-
-Lo único que falta es conseguir solucionar un error a la hora de hacer deploy del contrato:
-```
-
+The only remaining issue is solving an error during the contract deployment:
+```1_initial_migration.js
 1_initial_migration.js
-======================
-
-   Deploying 'Migrations'
-   ----------------------
-   > transaction hash:    0x70ee57fdbae0d63c3b986ad339b8aae8c1b8974a4fec8e038c5858370b88753f
- *** Deployment Failed ***
+Deploying 'Migrations'
+transaction hash: 0x70ee57fdbae0d63c3b986ad339b8aae8c1b8974a4fec8e038c5858370b88753f *** Deployment Failed ***
 
 "Migrations" -- Transaction was not mined within 750 seconds, please make sure your transaction was properly sent. Be aware that it might still be mined! -- Reason given: Custom error (could not decode)..
-
 
 Exiting: Review successful transactions manually by checking the transaction hashes above on Etherscan.
 
-
-Error:  *** Deployment Failed ***
+Error: *** Deployment Failed ***
 
 "Migrations" -- Transaction was not mined within 750 seconds, please make sure your transaction was properly sent. Be aware that it might still be mined! -- Reason given: Custom error (could not decode)..
 ```
 
-*Una vez que tenga solucionado esto, testearé en ropsten la aplicación y dejaré por aquí el `hash` de las operaciones*
+*Once this issue is resolved, I will test the application on Ropsten and provide the transaction hashes here for reference.*
+This version is more concise and clear, ensuring that the reader understands the project's purpose, progress, and current challenges.
