@@ -34,7 +34,7 @@
   "sourceMap": "36:210:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:210:2;;;;;;;",
   "deployedSourceMap": "36:210:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:210:2;;;;;;;;;;;;;;;;;;;120:123;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;120:123:2;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;189:7;227:8;216;:19;209:26;;120:123;;;;:::o",
   "source": "pragma solidity >=0.4.21 <0.6.0;\r\n\r\ncontract basicMath {\r\n    uint256 constant private MAX_UINT256 = 2**256 - 1;\r\n\r\n    function add(uint256 _numberA, uint256 _numberB) public pure returns(uint256) {\r\n        return _numberA + _numberB;\r\n    }\r\n}",
-  "sourcePath": "/home/mpaya5/Documentos/BlockchainCode/workspace/SupplyChainSmartContract-dApp/contracts/basicMath.sol",
+  "sourcePath": "/home/mpaya/Documentos/TOIMPROVE/SupplyChainSmartContract-dApp/contracts/basicMath.sol",
   "ast": {
     "absolutePath": "project:/contracts/basicMath.sol",
     "exportedSymbols": {
@@ -713,8 +713,8 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.6",
-  "updatedAt": "2022-04-01T08:00:37.077Z",
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2026-06-12T20:19:48.328Z",
   "devdoc": {
     "methods": {}
   },

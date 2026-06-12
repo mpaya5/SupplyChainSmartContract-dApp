@@ -74,7 +74,7 @@
   "sourceMap": "34:480:0:-;;;123:50;8:9:-1;5:2;;;30:1;27;20:12;5:2;123:50:0;158:10;150:5;;:18;;;;;;;;;;;;;;;;;;34:480;;;;;;",
   "deployedSourceMap": "34:480:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:480:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;347:165;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;347:165:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;82:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;58:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;240:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;240:103:0;;;;;;;;;;;;;;;;;:::i;:::-;;347:165;223:5;;;;;;;;;;;209:19;;:10;:19;;;205:26;;;409:19;442:11;409:45;;460:8;:21;;;482:24;;460:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;460:47:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;460:47:0;;;;230:1;205:26;347:165;:::o;82:36::-;;;;:::o;58:20::-;;;;;;;;;;;;;:::o;240:103::-;223:5;;;;;;;;;;;209:19;;:10;:19;;;205:26;;;329:9;302:24;:36;;;;205:26;240:103;:::o",
   "source": "pragma solidity >=0.4.21 <0.6.0;\n\ncontract Migrations {\n  address public owner;\n  uint public last_completed_migration;\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n  modifier restricted() {\n    if (msg.sender == owner) _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n\n  function upgrade(address new_address) public restricted {\n    Migrations upgraded = Migrations(new_address);\n    upgraded.setCompleted(last_completed_migration);\n  }\n}\n",
-  "sourcePath": "/home/mpaya5/Documentos/BlockchainCode/workspace/SupplyChainSmartContract-dApp/contracts/Migrations.sol",
+  "sourcePath": "/home/mpaya/Documentos/TOIMPROVE/SupplyChainSmartContract-dApp/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1477,10 +1477,16 @@
       "links": {},
       "address": "0x4B80759b8277a607de5DF6391e67AbE57611E195",
       "transactionHash": "0xa610444a67a6ce64e6d7cd49945e9e44dfc4d1a05f0cb04a9bffe2a3f8b93bd3"
+    },
+    "1781295511347": {
+      "events": {},
+      "links": {},
+      "address": "0x4668db92DA4fDc7A5854C80cCb2377390aD8e0c9",
+      "transactionHash": "0x80d14737cb8f19575eb67308cd62054234eea692ef182ff2215aabe960a75eb6"
     }
   },
-  "schemaVersion": "3.4.6",
-  "updatedAt": "2022-04-01T08:02:34.517Z",
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2026-06-12T20:19:49.845Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

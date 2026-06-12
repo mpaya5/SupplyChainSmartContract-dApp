@@ -218,7 +218,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// ----------------------------------------------------------------------------\r\n// ERC Token Standard #20 Interface\r\n// https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md\r\n// ----------------------------------------------------------------------------\r\npragma solidity >=0.4.21 <0.6.0;\r\n\r\ncontract ERC20Interface {\r\n    uint256 public totSupply;\r\n\r\n    function totalSupply() public view returns (uint);\r\n    function balanceOf(address tokenOwner) public view returns (uint balance);\r\n    function allowance(address tokenOwner, address spender) public view returns (uint remaining);\r\n    function transfer(address to, uint tokens) public returns (bool success);\r\n    function approve(address spender, uint tokens) public returns (bool success);\r\n    function transferFrom(address from, address to, uint tokens) public returns (bool success);\r\n\r\n    event Transfer(address indexed from, address indexed to, uint tokens);\r\n    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);\r\n\r\n}\r\n",
-  "sourcePath": "/home/mpaya5/Documentos/BlockchainCode/workspace/SupplyChainSmartContract-dApp/contracts/erc20Interface.sol",
+  "sourcePath": "/home/mpaya/Documentos/TOIMPROVE/SupplyChainSmartContract-dApp/contracts/erc20Interface.sol",
   "ast": {
     "absolutePath": "project:/contracts/erc20Interface.sol",
     "exportedSymbols": {
@@ -2013,8 +2013,8 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.6",
-  "updatedAt": "2022-04-01T08:00:37.078Z",
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2026-06-12T20:19:48.329Z",
   "devdoc": {
     "methods": {}
   },

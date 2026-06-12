@@ -1,4 +1,9 @@
 /*
+Legacy manual test script for Truffle console + Ganache.
+Use the automated suite in test/*.js for reproducible verification.
+*/
+
+/*
 - First Step:
 truffle deploy --network development --reset
 reset compiles and deploys your smart contract in the development network
