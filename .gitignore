@@ -1,4 +1,8 @@
 node_modules/
-build/
 .env
 .DS_Store
+cache/
+artifacts/
+coverage/
+coverage.json
+build/
